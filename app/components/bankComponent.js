@@ -16,7 +16,7 @@ export class BankApp extends Component {
         return (
             <div>
                 <header>
-                    <img src="//www.pro-react.com/logos/redux-bank.svg" width="150" />Redux Bank
+                    <img src="//www.pro-react.com/logos/redux-bank.svg" width="150" />Redux Bank Demo
                 </header>
                 <h1>Your balance is ${(this.props.balance).toFixed(2)}</h1>
                 <div className="atm">
