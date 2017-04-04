@@ -20,6 +20,7 @@ module.exports = {
         new HtmlWebpackPlugin({ template: __dirname + "/app/index.tmpl.html" }),
         new webpack.LoaderOptionsPlugin({ options: { context: __dirname, postcss: [autoprefixer] } }),
         new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify('production') } }),
         new webpack.optimize.UglifyJsPlugin(),
         new ExtractTextPlugin("[name]-[hash].css")
     ],
