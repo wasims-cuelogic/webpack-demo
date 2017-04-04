@@ -1,0 +1,1 @@
+web: build-prod && npm run start
