@@ -24,6 +24,8 @@ export class BankAppContainer extends Component {
                 balance={bankStore.getState().balance}
                 onDeposit={(amount) => bankStore.dispatch(bankActionCreators.depositIntoAccount(amount))}
                 onWithdraw={(amount) => bankStore.dispatch(bankActionCreators.withdrawFromAccount(amount))}
+                onToggle={() =>bankStore.dispatch(bankActionCreators.toggleInfo())}
+                showExchange={this.props.showExchange}
             />
         )
     }

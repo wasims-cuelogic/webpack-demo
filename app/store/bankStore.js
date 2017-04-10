@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import bankReducer from '../reducers/bankReducer';
 
 const logger = (store) => (next) => (action) => {
@@ -8,7 +8,10 @@ const logger = (store) => (next) => (action) => {
 
 const bankStore = createStore(
     bankReducer,
-    applyMiddleware(logger) // enhance the store with the logger middleware
+    compose(
+        applyMiddleware(logger),
+        window.devToolsExtension ? window.devToolsExtension() : f => f
+    ), // enhance the store with the logger middleware
 );
 
 export default bankStore;
